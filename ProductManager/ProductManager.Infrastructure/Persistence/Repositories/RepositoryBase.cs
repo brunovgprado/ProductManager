@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ProductManager.Domain.Contracts.Repository;
+﻿using ProductManager.Domain.Contracts.Repository;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
