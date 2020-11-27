@@ -37,9 +37,9 @@ namespace ProductManager.Application.AppServices
             {
                 return response.SetRequestValidationError(ex);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return response.SetInternalServerError(Resources.UnexpectedErrorCreatingProduto);
+                return response.SetInternalServerError($"{Resources.UnexpectedErrorCreatingProduto} : {ex.Message}");
             }
         }
     }

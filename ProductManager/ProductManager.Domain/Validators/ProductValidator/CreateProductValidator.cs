@@ -12,9 +12,6 @@ namespace ProductManager.Domain.Validators.ProductValidator
                 .NotNull().WithMessage(Resources.NOME_PRODUTO_OBRIGATORIO);
 
             RuleFor(x => x.Nome)
-              .Empty().WithMessage(Resources.NOME_PRODUTO_OBRIGATORIO);
-
-            RuleFor(x => x.Nome)
                 .MinimumLength(2).WithMessage(Resources.NOME_PRODUTO_TAMANHO_MINIMO);   
         }
     }

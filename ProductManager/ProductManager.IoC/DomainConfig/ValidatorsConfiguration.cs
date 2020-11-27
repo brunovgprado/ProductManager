@@ -1,15 +1,15 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using ProductManager.Domain.Contracts.DomainServices;
-using ProductManager.Domain.DomainServices;
 using ProductManager.Domain.Validators.ProductValidator;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace ProductManager.IoC.DomainConfig
 {
-    public class DomainServiceConfiguration
+    public class ValidatorsConfiguration
     {
         public static void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IProdutoDomainService, ProdutoDomainService>();
             services.AddSingleton<CreateProductValidator, CreateProductValidator>();
         }
     }

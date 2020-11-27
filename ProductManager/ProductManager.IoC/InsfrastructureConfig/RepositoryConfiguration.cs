@@ -10,6 +10,7 @@ namespace ProductManager.IoC.InsfrastructureConfig
         {
             services.AddTransient(typeof(IRepositoryBase<,>), typeof(RepositoryBase<,>));
             services.AddTransient<IProdutoRepository, ProdutoRepository>();
+            services.AddTransient<DataContext, DataContext>();
         }
     }
 }

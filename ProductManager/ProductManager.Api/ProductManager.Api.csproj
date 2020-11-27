@@ -5,11 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProductManager.Application\ProductManager.Application.csproj" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configurations\" />
+    <ProjectReference Include="..\ProductManager.Application\ProductManager.Application.csproj" />
+    <ProjectReference Include="..\ProductManager.IoC\ProductManager.IoC.csproj" />
   </ItemGroup>
 
 </Project>
