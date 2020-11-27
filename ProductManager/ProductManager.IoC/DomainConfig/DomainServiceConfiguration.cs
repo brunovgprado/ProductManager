@@ -8,7 +8,7 @@ namespace ProductManager.IoC.DomainConfig
     {
         public static void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IProdutoDomainService, ProdutoDomainService>();
+            services.AddSingleton<IProdutoDomainService, ProdutoDomainService>();
         }
     }
 }

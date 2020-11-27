@@ -6,6 +6,6 @@ namespace ProductManager.Application.Contracts
 {
     public interface IProdutoAppService
     {
-        Task<Object> CreateAsync(CreateProdutoDto produtoDto);
+        Task<Object> CreateAsync(ProdutoDto produtoDto);
     }
 }

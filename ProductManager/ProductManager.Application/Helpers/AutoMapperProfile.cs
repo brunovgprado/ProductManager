@@ -7,7 +7,7 @@ namespace ProductManager.Application.Helpers
     {
         public AutoMapperProfile()
         {
-            CreateMap<CreateProdutoDto, Produto>();
+            CreateMap<ProdutoDto, Produto>();
         }
     }
 }
