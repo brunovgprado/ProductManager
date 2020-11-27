@@ -24,7 +24,7 @@ namespace ProductManager.Application.AppServices
             _mapper = mapper;
         }
 
-        public async Task<Object> CreateAsync(ProdutoDto produtoDto)
+        public async Task<Response<Object>> CreateAsync(ProdutoDto produtoDto)
         {
             var response = new Response<Object>();
             try
