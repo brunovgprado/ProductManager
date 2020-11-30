@@ -10,5 +10,6 @@ namespace ProductManager.Application.Contracts
     {
         Task<Response<Object>> CreateAsync(ProdutoDto produtoDto);
         Task<Response<Produto>> ReadAsync(Guid id);
+        Task<Response<Object>> UpdateAsync(ProdutoDto produtoDto);
     }
 }

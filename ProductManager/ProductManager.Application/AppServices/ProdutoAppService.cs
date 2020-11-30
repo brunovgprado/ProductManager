@@ -61,5 +61,28 @@ namespace ProductManager.Application.AppServices
                 return response.SetInternalServerError($"{Resources.UnexpectedErrorCreatingProduto} : {ex.Message}");
             }
         }
+
+        public async Task<Response<Object>> UpdateAsync(ProdutoDto produtoDto)
+        {
+            var response = new Response<Object>();
+            try
+            {
+                var produtoEntity = _mapper.Map<Produto>(produtoDto);
+                await _produtoDomainService.UpdateAsync(produtoEntity);
+                return response.SetResult(new { Success = true });
+            }
+            catch (ValidationException ex)
+            {
+                return response.SetRequestValidationError(ex);
+            }
+            catch (EntityNotExistsException)
+            {
+                return response.SetNotFound(Resources.ProdutoNotFound);
+            }
+            catch (Exception ex)
+            {
+                return response.SetInternalServerError($"{Resources.UnexpectedErrorCreatingProduto} : {ex.Message}");
+            }
+        }
     }
 }

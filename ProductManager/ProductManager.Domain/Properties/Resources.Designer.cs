@@ -61,6 +61,15 @@ namespace ProductManager.Domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O id do produto é obrigatório para edição.
+        /// </summary>
+        internal static string ID_PRODUTO_OBRIGATORIO {
+            get {
+                return ResourceManager.GetString("ID_PRODUTO_OBRIGATORIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O nome do produto deve ser informado.
         /// </summary>
         internal static string NOME_PRODUTO_OBRIGATORIO {
