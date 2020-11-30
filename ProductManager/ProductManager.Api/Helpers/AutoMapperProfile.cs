@@ -9,6 +9,7 @@ namespace ProductManager.Api.Helpers
         public AutoMapperProfile()
         {
             CreateMap<CreateProdutoRequest, ProdutoDto>();
+            CreateMap<UpdateProdutoRequest, ProdutoDto>();
         }
     }
 }

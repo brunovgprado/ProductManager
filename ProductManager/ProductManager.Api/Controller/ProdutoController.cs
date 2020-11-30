@@ -29,16 +29,23 @@ namespace ProductManager.Api.Controller
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CreateProdutoRequest game)
+        public async Task<IActionResult> Create(CreateProdutoRequest produto)
         {
-            var gameDto = _mapper.Map<ProdutoDto>(game);
-            return _actionResultConverter.Convert(await _produtoService.CreateAsync(gameDto));
+            var produtoDto = _mapper.Map<ProdutoDto>(produto);
+            return _actionResultConverter.Convert(await _produtoService.CreateAsync(produtoDto));
         }
 
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery]Guid id)
         {
             return _actionResultConverter.Convert(await _produtoService.ReadAsync(id));
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update(UpdateProdutoRequest produto)
+        {
+            var produtoDto = _mapper.Map<ProdutoDto>(produto);
+            return _actionResultConverter.Convert(await _produtoService.CreateAsync(produtoDto));
         }
     }
 }
