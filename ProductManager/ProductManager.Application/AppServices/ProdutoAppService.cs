@@ -6,6 +6,7 @@ using ProductManager.Application.Properties;
 using ProductManager.Application.Shared;
 using ProductManager.Domain.Contracts.DomainServices;
 using ProductManager.Domain.Entities;
+using ProductManager.Domain.Exceptions;
 using System;
 using System.Threading.Tasks;
 
@@ -38,6 +39,24 @@ namespace ProductManager.Application.AppServices
                 return response.SetRequestValidationError(ex);
             }
             catch (Exception ex)
+            {
+                return response.SetInternalServerError($"{Resources.UnexpectedErrorCreatingProduto} : {ex.Message}");
+            }
+        }
+
+        public async Task<Response<Produto>> ReadAsync(Guid id)
+        {
+            var response = new Response<Produto>();
+
+            try
+            {
+                return response.SetResult( await _produtoDomainService.ReadAsync(id));
+            }
+            catch(EntityNotExistsException)
+            {
+                return response.SetNotFound(Resources.ProdutoNotFound);
+            }
+            catch(Exception ex)
             {
                 return response.SetInternalServerError($"{Resources.UnexpectedErrorCreatingProduto} : {ex.Message}");
             }

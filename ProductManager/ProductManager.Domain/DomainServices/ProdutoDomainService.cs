@@ -33,7 +33,7 @@ namespace ProductManager.Domain.DomainServices
 
             await _produtoRepository.CreateAsync(produto);
 
-            return produto.GetId();
+            return produto.Id;
         }
 
         public async Task DeleteAsync(Guid id)

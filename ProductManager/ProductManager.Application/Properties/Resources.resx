@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ProdutoNotFound" xml:space="preserve">
+    <value>Não foi encontrado produto com o identificador fornecido</value>
+  </data>
   <data name="UnexpectedErrorCreatingProduto" xml:space="preserve">
     <value>Ocorreu um erro inesperado ao tentar cadastrar a entidade Produto</value>
+  </data>
+  <data name="UnexpectedErrorReadingProduto" xml:space="preserve">
+    <value>Ocorreu um erro inesperado ao tentar obter um Produto</value>
   </data>
 </root>

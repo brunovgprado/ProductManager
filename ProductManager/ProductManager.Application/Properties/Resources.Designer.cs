@@ -61,11 +61,29 @@ namespace ProductManager.Application.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Não foi encontrado produto com o identificador fornecido.
+        /// </summary>
+        internal static string ProdutoNotFound {
+            get {
+                return ResourceManager.GetString("ProdutoNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ocorreu um erro inesperado ao tentar cadastrar a entidade Produto.
         /// </summary>
         internal static string UnexpectedErrorCreatingProduto {
             get {
                 return ResourceManager.GetString("UnexpectedErrorCreatingProduto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ocorreu um erro inesperado ao tentar obter um Produto.
+        /// </summary>
+        internal static string UnexpectedErrorReadingProduto {
+            get {
+                return ResourceManager.GetString("UnexpectedErrorReadingProduto", resourceCulture);
             }
         }
     }

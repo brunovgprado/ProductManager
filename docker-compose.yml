@@ -1,0 +1,42 @@
+version: '3.7'
+
+networks:
+  product_manager-dev:
+    driver: bridge 
+
+services:
+  productapi:
+    image: product_manager:latest
+    depends_on:
+      - "sqlserver1"
+    build:
+      context: .
+      dockerfile: api.dockerfile
+    ports:
+      - "8000:80"     
+    environment:      
+      DB_CONNECTION_STRING: "Server=sqlserver1;Database=productmanager;User=sa;Password=Produto12345678;"
+      ASPNETCORE_ENVIRONMENT: "Development"
+    networks:
+      - product_manager-dev  
+
+  sqlserver1:
+    build: 
+      context: .
+      dockerfile: sqlserver.dockerfile
+    ports:  
+      - "15789:1433"
+    env_file: sqlserver.env
+    volumes: 
+      - sqlsystem:/var/opt/mssql/
+      - sqldata:/var/opt/sqlserver/data
+      - sqllog:/var/opt/sqlserver/log
+      - sqlbackup:/var/opt/sqlserver/backup
+    networks: 
+      - product_manager-dev
+
+volumes:
+  sqlsystem:
+  sqldata:
+  sqllog:
+  sqlbackup:
