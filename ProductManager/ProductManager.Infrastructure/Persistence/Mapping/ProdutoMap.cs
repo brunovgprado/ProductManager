@@ -11,7 +11,11 @@ namespace ProductManager.Infrastructure.Persistence.Mapping
     {
         public void Configure(EntityTypeBuilder<Produto> builder)
         {
-            builder.Property(p => p.GetId()).HasColumnName("ID_PRODUTO");
+            builder.ToTable("PRODUTOS");
+
+            builder.HasKey(p => p.Id);
+
+            builder.Property(p => p.Id).HasColumnName("ID_PRODUTO");
             builder.Property(p => p.Nome).HasColumnName("NOME_PRODUTO");
             builder.Property(p => p.Valor).HasColumnName("VALOR_PRODUTO");
             builder.Property(p => p.imagemUri).HasColumnName("IMAGEMURI_PRODUTO");

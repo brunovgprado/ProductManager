@@ -4,16 +4,11 @@ namespace ProductManager.Domain.Entities
 {
     public class Produto
     {
-        private Guid id;
-
-        public Guid GetId()
-        {
-            return id;
-        }
+        public Guid Id { get; set; }
 
         public void SetId(Guid value)
         {
-            id = value;
+            Id = value;
         }
 
         public string Nome { get; set; }
