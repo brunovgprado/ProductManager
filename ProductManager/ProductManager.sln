@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductManager.Infrastructu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductManager.IoC", "ProductManager.IoC\ProductManager.IoC.csproj", "{88B8474F-F0B1-4BDA-A0BC-8D58BCDCDD1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManager.Application", "ProductManager.Application\ProductManager.Application.csproj", "{7D746095-BAA9-454C-8E91-14F6B5D6582C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductManager.Application", "ProductManager.Application\ProductManager.Application.csproj", "{7D746095-BAA9-454C-8E91-14F6B5D6582C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManager.Api", "ProductManager.Api\ProductManager.Api.csproj", "{59B8B386-EFE8-4FAC-91FB-E0977D70311B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductManager.Api", "ProductManager.Api\ProductManager.Api.csproj", "{59B8B386-EFE8-4FAC-91FB-E0977D70311B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManager.Test", "ProductManager.Test\ProductManager.Test.csproj", "{1970A324-FF50-4A4F-85A5-48D667FFE637}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{59B8B386-EFE8-4FAC-91FB-E0977D70311B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59B8B386-EFE8-4FAC-91FB-E0977D70311B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59B8B386-EFE8-4FAC-91FB-E0977D70311B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1970A324-FF50-4A4F-85A5-48D667FFE637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1970A324-FF50-4A4F-85A5-48D667FFE637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1970A324-FF50-4A4F-85A5-48D667FFE637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1970A324-FF50-4A4F-85A5-48D667FFE637}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
