@@ -108,7 +108,7 @@ jobs:
       containerRegistry: '$(docker_registry_account)'
       repository: '$(docker_image_name)'
       command: 'buildAndPush'
-      Dockerfile: '$(System.DefaultWorkingDirectory)/Dockerfile'
+      Dockerfile: '$(System.DefaultWorkingDirectory)/api.dockerfile'
       buildContext: '$(System.DefaultWorkingDirectory)'
       tags: |
         $(Version)
