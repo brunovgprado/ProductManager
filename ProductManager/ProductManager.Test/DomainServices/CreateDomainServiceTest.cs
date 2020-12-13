@@ -90,7 +90,7 @@ namespace ProductManager.Test.DomainServices
         }
 
         [Fact]
-        public async Task Update_WithNameEmptyShouldThrowValidationException()
+        public async Task Update_WithIdEmptyShouldThrowValidationException()
         {
             //Arrange
             var entity = new ProductBuilder().WithIdEmpty();
