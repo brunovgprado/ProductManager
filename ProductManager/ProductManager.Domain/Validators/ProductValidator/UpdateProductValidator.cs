@@ -12,7 +12,8 @@ namespace ProductManager.Domain.Validators.ProductValidator
         public UpdateProductValidator()
         {
             RuleFor(x => x.Id)
-                .NotNull().WithMessage(Resources.ID_PRODUTO_OBRIGATORIO);
+                .NotNull().WithMessage(Resources.ID_PRODUTO_OBRIGATORIO)
+                .Must(x => x != Guid.Empty);
 
             RuleFor(x => x.Nome)
                 .NotNull().WithMessage(Resources.NOME_PRODUTO_OBRIGATORIO);
