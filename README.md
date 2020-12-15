@@ -1,3 +1,4 @@
+[![Build Status](https://hortohome.visualstudio.com/ProductManager/_apis/build/status/brunovitorprado.ProductManager?branchName=master)](https://hortohome.visualstudio.com/ProductManager/_build/latest?definitionId=2&branchName=master)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=brunovitorprado_ProductManager&metric=bugs)](https://sonarcloud.io/dashboard?id=brunovitorprado_ProductManager)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=brunovitorprado_ProductManager&metric=code_smells)](https://sonarcloud.io/dashboard?id=brunovitorprado_ProductManager)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=brunovitorprado_ProductManager&metric=coverage)](https://sonarcloud.io/dashboard?id=brunovitorprado_ProductManager)
