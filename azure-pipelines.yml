@@ -85,8 +85,7 @@ jobs:
         projectName: '$(project_name)'
         extraProperties: |
           sonar.inclusions=$(project_name)/$(project_name).Domain/**,$(project_name)/$(project_name).Application/**
-          sonar.cs.opencover.reportsPaths=$(Pipeline.Workspace)/result.opencover.xml
-        
+          sonar.cs.opencover.reportsPaths=$(Pipeline.Workspace)/result.opencover.xml      
 
     - script: |
         dotnet build $(project_name)
