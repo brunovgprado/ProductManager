@@ -46,18 +46,21 @@ jobs:
                   /p:Exclude=[xunit.*]* $(project_name)/$(project_name).sln \
                   --test-adapter-path:. --logger:"xunit;LogFilePath=results/result.xunit.xml"
     displayName: Runnig Unit Tests
+
   - task:  PublishPipelineArtifact@1
     displayName: Store Test Result
     inputs:
       path: $(System.DefaultWorkingDirectory)/$(project_name)/$(project_name).Test/results
       artifact: UnitTestResults
+
   - task: PublishCodeCoverageResults@1
     displayName: Publish Code Coverage
     inputs:
       codeCoverageTool: 'Cobertura'
       summaryFileLocation: $(System.DefaultWorkingDirectory)/$(project_name)/$(project_name).Test/results/result.cobertura.xml
       pathToSources: .
-      failIfCoverageEmpty: true       
+      failIfCoverageEmpty: true   
+
   - task: PublishTestResults@2
     displayName: Publish Test Result
     inputs:
@@ -72,6 +75,7 @@ jobs:
       displayName: Get Test Results
       inputs:
         artifact: UnitTestResults
+
     - task: SonarCloudPrepare@1
       inputs:
         SonarCloud: '$(sonarcloud_account)'
@@ -79,13 +83,19 @@ jobs:
         scannerMode: 'MSBuild' 
         projectKey: '$(sonarcloud_project)'
         projectName: '$(project_name)'
-        extraProperties: 'sonar.cs.opencover.reportsPaths=$(Pipeline.Workspace)/result.opencover.xml'
+        extraProperties: |
+          sonar.coverage.exclusions=$(project_name)/$(project_name).Api/**,$(project_name)/$(project_name).Infrastructure/**,$(project_name)/$(project_name).IoC/**
+          sonar.cs.opencover.reportsPaths=$(Pipeline.Workspace)/result.opencover.xml      
+
     - script: |
         dotnet build $(project_name)
       displayName: Runing Build for Analysis
+
     - task: SonarCloudAnalyze@1
       displayName: Finish Sonar Analysis
+      
     - task: SonarCloudPublish@1
+      displayName: Publish quality gate results
       inputs:
         pollingTimeoutSec: '300'
 
@@ -99,10 +109,12 @@ jobs:
     displayName: Get Application Artifact
     inputs:
       artifact: $(project_name)
+
   - script: |
       mkdir -p $(project_name)/bin/Release
       cp -r $(Pipeline.Workspace)/$(Build.SourceBranchName) $(project_name)/bin/Release/netcoreapp$(netcore_version)
     displayName: Prepare Files
+
   - task: Docker@2
     displayName: 'Build and Publish Docker Image'
     inputs:
