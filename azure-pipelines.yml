@@ -84,7 +84,7 @@ jobs:
         projectKey: '$(sonarcloud_project)'
         projectName: '$(project_name)'
         extraProperties: |
-          sonar.inclusions=$(project_name)/$(project_name).Domain/**,$(project_name)/$(project_name).Application/**
+          sonar.coverage.exclusions=$(project_name)/$(project_name).Api/**,$(project_name)/$(project_name).Infrastructure/**,$(project_name)/$(project_name).IoC/**
           sonar.cs.opencover.reportsPaths=$(Pipeline.Workspace)/result.opencover.xml      
 
     - script: |
