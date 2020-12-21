@@ -11,8 +11,8 @@ pool:
 variables:
   project_name: 'ProductManager'
   netcore_version: '3.1'
-  sonarcloud_project: 'hortohome_ProductManager'
-  sonarcloud_organization: 'hortohome'
+  sonarcloud_project: 'brunovitorprado_ProductManager'
+  sonarcloud_organization: 'brunovitorprado'
   sonarcloud_account: 'ProductManager'
   docker_image_name: 'brunomcp2010/productmanager-api' 
   docker_registry_account: 'productmanager-api'

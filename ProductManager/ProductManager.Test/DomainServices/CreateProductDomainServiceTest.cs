@@ -18,7 +18,7 @@ using Xunit;
 
 namespace ProductManager.Test.DomainServices
 {
-    public class CreateDomainServiceTest
+    public class CreateProductDomainServiceTest
     {
         private readonly CreateProductValidator _createprodutoValidator;
         private readonly UpdateProductValidator _updateprodutoValidator;
@@ -26,7 +26,7 @@ namespace ProductManager.Test.DomainServices
         private readonly IProdutoDomainService _produtoDomainService;
         private readonly IMapper _mapper;
 
-        public CreateDomainServiceTest()
+        public CreateProductDomainServiceTest()
         {
             _createprodutoValidator = new CreateProductValidator();
             _updateprodutoValidator = new UpdateProductValidator();
@@ -71,33 +71,5 @@ namespace ProductManager.Test.DomainServices
                 async () => await _produtoDomainService.CreateAsync(entity));
         }
 
-        [Fact]
-        public async void UpdateProduto_Success()
-        {
-            //Arrange
-            var domainServiceMoq = new Mock<IProdutoDomainService>(); 
-            domainServiceMoq.Setup(x => x.UpdateAsync(It.IsAny<Produto>()));
-
-            var produtoAppService = new ProdutoAppService(domainServiceMoq.Object, _mapper);
-
-            var produtoDto = new ProdutoDto { Id = Guid.NewGuid(), Nome = "Test product" };
-
-            //Act
-            await produtoAppService.UpdateAsync(produtoDto);
-
-            //Assert
-            domainServiceMoq.Verify(x => x.UpdateAsync(It.IsAny<Produto>()));
-        }
-
-        [Fact]
-        public async Task Update_WithNameEmptyShouldThrowValidationException()
-        {
-            //Arrange
-            var entity = new ProductBuilder().WithIdEmpty();
-
-            //Act/Assert
-            await Assert.ThrowsAsync<ValidationException>(
-                async () => await _produtoDomainService.UpdateAsync(entity));
-        }
     }
 }
