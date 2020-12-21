@@ -95,7 +95,7 @@ jobs:
       displayName: Finish Sonar Analysis
       
     - task: SonarCloudPublish@1
-      displayname: Publish quality gate results
+      displayName: Publish quality gate results
       inputs:
         pollingTimeoutSec: '300'
 
