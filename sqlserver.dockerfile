@@ -1,29 +1,17 @@
-FROM ubuntu:18.04
- 
-RUN useradd -u 10001 mssql
- 
-RUN apt-get update && apt-get install -y wget software-properties-common apt-transport-https
-RUN wget -qO- https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-RUN add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)"
-RUN apt-get update && apt-get install -y mssql-server
- 
-RUN mkdir /var/opt/sqlserver
-RUN mkdir /var/opt/sqlserver/data
-RUN mkdir /var/opt/sqlserver/log
-RUN mkdir /var/opt/sqlserver/backup
- 
-RUN chown -R mssql:mssql /var/opt/sqlserver
-RUN chown -R mssql:mssql /var/opt/mssql
+FROM microsoft/mssql-server-linux:latest
 
-RUN apt install curl -y
-RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-RUN curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | tee /etc/apt/sources.list.d/msprod.list
-RUN apt-get --yes update
-RUN apt-get --yes install mssql-tools 
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
-USER mssql
+COPY ./dbsettings /usr/src/app
 
-COPY ./dbsettings /
+RUN chmod +x /usr/src/app/import-data.sh
 
-ENTRYPOINT [ "/bin/bash", "entrypoint.sh" ]
-CMD [ "/opt/mssql/bin/sqlservr" ]
+USER root
+
+ENV ACCEPT_EULA="Y"
+ENV MSSQL_SA_PASSWORD="Produto12345678"
+
+RUN ( /opt/mssql/bin/sqlservr --accept-eula & ) | grep -q "Service Broker manager has started" \
+    && /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'Produto12345678' -i /usr/src/app/setup.sql \
+    && pkill sqlservr 
