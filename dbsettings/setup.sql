@@ -1,6 +1,6 @@
-CREATE DATABASE MSSQL_DB=productmanager;
+CREATE DATABASE ProductManager
 GO
-USE productmanager;
+USE ProductManager;
 GO
-CREATE TABLE Produtos (ID_PRODUTO uuid, NOME_PRODUTO nvarchar(200), VALOR_PRODUTO decimal(18,2), IMAGEMURI_PRODUTO nvarchar(500));
+CREATE TABLE Produtos (ID_PRODUTO UNIQUEIDENTIFIER, NOME_PRODUTO nvarchar(200), VALOR_PRODUTO decimal(18,2), IMAGEMURI_PRODUTO nvarchar(500));
 GO

@@ -28,7 +28,6 @@ services:
       - "15789:1433"
     env_file: sqlserver.env
     volumes: 
-      - sqlsystem:/var/opt/mssql/
       - sqldata:/var/opt/sqlserver/data
       - sqllog:/var/opt/sqlserver/log
       - sqlbackup:/var/opt/sqlserver/backup
@@ -36,7 +35,6 @@ services:
       - product_manager-dev
 
 volumes:
-  sqlsystem:
   sqldata:
   sqllog:
   sqlbackup:
