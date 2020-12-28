@@ -6,7 +6,6 @@ using ProductManager.Domain.Exceptions;
 using ProductManager.Domain.Validators.ProductValidator;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ProductManager.Domain.DomainServices
