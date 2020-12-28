@@ -8,6 +8,7 @@ namespace ProductManager.IoC.DomainConfig
         public static void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<CreateProductValidator, CreateProductValidator>();
+            services.AddSingleton<UpdateProductValidator, UpdateProductValidator>();
         }
     }
 }
