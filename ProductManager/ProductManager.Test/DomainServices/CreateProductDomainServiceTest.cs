@@ -2,17 +2,12 @@
 using FluentAssertions;
 using FluentValidation;
 using Moq;
-using ProductManager.Application.AppServices;
-using ProductManager.Application.Contracts;
 using ProductManager.Application.Helpers;
-using ProductManager.Application.Models.DTO;
 using ProductManager.Domain.Contracts.DomainServices;
 using ProductManager.Domain.Contracts.Repository;
 using ProductManager.Domain.DomainServices;
-using ProductManager.Domain.Entities;
 using ProductManager.Domain.Validators.ProductValidator;
 using ProductManager.Test.Builders;
-using System;
 using System.Threading.Tasks;
 using Xunit;
 

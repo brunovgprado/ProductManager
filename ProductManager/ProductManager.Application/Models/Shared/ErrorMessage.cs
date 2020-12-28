@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ProductManager.Application.Models.Shared
+﻿namespace ProductManager.Application.Models.Shared
 {
     public class ErrorMessage
     {
