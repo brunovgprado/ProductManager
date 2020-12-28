@@ -2,8 +2,6 @@
 using ProductManager.Domain.Entities;
 using ProductManager.Domain.Properties;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ProductManager.Domain.Validators.ProductValidator
 {

@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using ProductManager.Api.Contracts;
-using ProductManager.Api.Models;
 using ProductManager.Api.Models.Request;
 using ProductManager.Application.Contracts;
 using ProductManager.Application.Models.DTO;
