@@ -85,7 +85,7 @@ jobs:
         projectName: '$(project_name)'
         extraProperties: |
           sonar.cs.opencover.reportsPaths=$(Pipeline.Workspace)/result.opencover.xml 
-          sonar.coverage.exclusions=$(project_name)/$(project_name).Api/**/*,$(project_name)/$(project_name).Infrastructure/**/*,$(project_name)/$(project_name).IoC/**/*               
+          sonar.coverage.exclusions=$(project_name)/$(project_name).Api/**/*.*,$(project_name)/$(project_name).Infrastructure/**/*.*,$(project_name)/$(project_name).IoC/**/*.*               
 
     - script: |
         dotnet build $(project_name)
