@@ -6,7 +6,7 @@ using System;
 
 namespace ProductManager.IoC.ApplicationConfig
 {
-    public class AppServicesConfiguration
+    public static class AppServicesConfiguration
     {
         public static void ConfigureServices(IServiceCollection services)
         {
