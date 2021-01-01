@@ -1,4 +1,5 @@
 ﻿using ProductManager.Domain.Contracts.Repository;
+using ProductManager.Infrastructure.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace ProductManager.Infrastructure.Persistence.Repositories
             }
             catch(Exception ex)
             {
-                throw new Exception($"A entidade {nameof(entity)} não pôde ser salva: {ex.Message}");
+                throw new CustomizedMessageException($"A entidade {nameof(entity)} não pôde ser salva: {ex.Message}");
             }
         }
 
@@ -47,7 +48,7 @@ namespace ProductManager.Infrastructure.Persistence.Repositories
             }
             catch(Exception ex)
             {
-                throw new Exception($"Não foi possível obter a entidade: {ex.Message}");
+                throw new CustomizedMessageException($"Não foi possível obter a entidade: {ex.Message}");
             }
         }
 
@@ -65,7 +66,7 @@ namespace ProductManager.Infrastructure.Persistence.Repositories
             }
             catch(Exception ex)
             {
-                throw new Exception($"A entidade {nameof(entity)} não pôde ser atualizada: {ex.Message}");
+                throw new CustomizedMessageException($"A entidade {nameof(entity)} não pôde ser atualizada: {ex.Message}");
             }
         }
 
@@ -78,7 +79,7 @@ namespace ProductManager.Infrastructure.Persistence.Repositories
             }
             catch(Exception ex)
             {
-                throw new Exception($"A entidade não pôde ser excluida: {ex.Message}");
+                throw new CustomizedMessageException($"A entidade não pôde ser excluida: {ex.Message}");
             }
         }
 

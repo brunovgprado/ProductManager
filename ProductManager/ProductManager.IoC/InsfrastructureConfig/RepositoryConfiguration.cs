@@ -4,7 +4,7 @@ using ProductManager.Infrastructure.Persistence.Repositories;
 
 namespace ProductManager.IoC.InsfrastructureConfig
 {
-    public class RepositoryConfiguration
+    public static class RepositoryConfiguration
     {
         public static void ConfigureServices(IServiceCollection services)
         {
