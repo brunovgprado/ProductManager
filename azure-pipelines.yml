@@ -1,6 +1,6 @@
 trigger:
 - master
-- releases/*
+- release/*
 - hotfix/*
 - bugfix/*
 - refactor/*
@@ -84,8 +84,8 @@ jobs:
         projectKey: '$(sonarcloud_project)'
         projectName: '$(project_name)'
         extraProperties: |
-          sonar.coverage.exclusions=$(project_name)/$(project_name).Api/**,$(project_name)/$(project_name).Infrastructure/**,$(project_name)/$(project_name).IoC/**
-          sonar.cs.opencover.reportsPaths=$(Pipeline.Workspace)/result.opencover.xml      
+          sonar.cs.opencover.reportsPaths=$(Pipeline.Workspace)/result.opencover.xml 
+          sonar.coverage.exclusions=$(project_name)/$(project_name).Api/**/*.*,$(project_name)/$(project_name).Infrastructure/**/*.*,$(project_name)/$(project_name).IoC/**/*.*               
 
     - script: |
         dotnet build $(project_name)

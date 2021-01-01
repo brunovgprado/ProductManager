@@ -5,7 +5,7 @@ using ProductManager.Domain.Validators.ProductValidator;
 
 namespace ProductManager.IoC.DomainConfig
 {
-    public class DomainServiceConfiguration
+    public static class DomainServiceConfiguration
     {
         public static void ConfigureServices(IServiceCollection services)
         {

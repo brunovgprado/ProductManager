@@ -9,7 +9,7 @@ namespace ProductManager.Infrastructure.Persistence.Repositories
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("CONNECTIO_STRING"));
+            optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("DB_CONNECTION_STRING"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

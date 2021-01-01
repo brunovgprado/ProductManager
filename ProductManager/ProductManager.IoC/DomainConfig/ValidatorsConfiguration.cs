@@ -3,7 +3,7 @@ using ProductManager.Domain.Validators.ProductValidator;
 
 namespace ProductManager.IoC.DomainConfig
 {
-    public class ValidatorsConfiguration
+    public static class ValidatorsConfiguration
     {
         public static void ConfigureServices(IServiceCollection services)
         {
