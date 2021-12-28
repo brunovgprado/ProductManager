@@ -22,7 +22,7 @@ jobs:
 - job: Build
   steps:
   - script: echo "##vso[task.setvariable variable=sonarcloud_account;] mudei aqui"
-    condition:  and(succeeded(), eq('$({{Build.SourceBranchName}}', 'develop'))
+    condition:  and(succeeded(), eq('${{Build.SourceBranchName}}', 'develop'))
     name: SetVars
 
   - script: echo $(sonarcloud_account)
