@@ -16,12 +16,13 @@ variables:
   sonarcloud_account: 'ProductManager'
   docker_image_name: 'brunomcp2010/productmanager-api' 
   docker_registry_account: 'productmanager-api'
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
 
 jobs:
 - job: Build
   steps:
   - script: echo "##vso[task.setvariable variable=sonarcloud_account;] mudei aqui"
-    condition:  and(succeeded(), eq($(Build.SourceBranchName), 'develop'))
+    condition:  and(succeeded(), eq('$({{Build.SourceBranchName}}', 'develop'))
     name: SetVars
 
   - script: echo $(sonarcloud_account)
