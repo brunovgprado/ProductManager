@@ -20,6 +20,13 @@ variables:
 jobs:
 - job: Build
   steps:
+  - bash: |
+      echo "##vso[task.setvariable variable=Sauce;]crushed tomatoes"
+    name: SetVars
+
+  - bash: |
+      echo $(Sauce)
+
   - script: |
       pwd && ls -la
       dotnet restore $(project_name)
