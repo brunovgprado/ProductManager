@@ -21,11 +21,11 @@ jobs:
 - job: Build
   steps:
   - bash: |
-      echo "##vso[task.setvariable variable=Sauce;]crushed tomatoes"
+      echo "##vso[task.setvariable variable=sonarcloud_account;]crushed tomatoes"
     name: SetVars
 
   - bash: |
-      echo $(Sauce)
+      echo $(sonarcloud_account)
 
   - script: |
       pwd && ls -la
