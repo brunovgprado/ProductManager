@@ -21,7 +21,7 @@ variables:
 jobs:
 - job: Build
   steps:
-  - script: vso[task.setvariable variable=sonarcloud_account;] $(TESTE)
+  - script: ##vso[task.setvariable variable=sonarcloud_account;] $(TESTE)
     condition:  and(succeeded(), eq(variables.isMasterBranch, 'true'))
     name: SetVars
 
